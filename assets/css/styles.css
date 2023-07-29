@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "tungsten";
+    text-align: center;
+}
+
+p {
+    font-family: "din";
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50vw;
+}
+
+section div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15vw;
+}
+
+div img {
+    height: 80px;
+    width: 80px;
+}
+
+button {
+    background-color: #FF4655;
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+    padding: 25px;
+    border-radius: 2px;
+    border: none;
+    transition: 0.5s;
+}
+
+.locked {
+    display: none;
+}
