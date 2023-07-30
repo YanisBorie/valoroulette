@@ -4,9 +4,18 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 h1 {
     font-family: "tungsten";
+    font-size: 52px;
+    color: white;
     text-align: center;
+    margin-top: 8vh;
 }
 
 p {
@@ -22,13 +31,26 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50vw;
+    width: 60vw;
 }
 
 section div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+section div div {
+    background-color: rgba(182, 182, 182, 0.24);
+    margin: 5px;
+    padding: 15px;
+    border-radius: 1vw;
+    border: 2px solid rgba(182, 182, 182, 0.24);
+    cursor: pointer;
+}
+
+section div div:hover {
+    border: 2px solid white;
 }
 
 aside {
@@ -41,6 +63,9 @@ aside {
 div img {
     height: 80px;
     width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2em;
 }
 
 button {
@@ -52,8 +77,11 @@ button {
     border-radius: 2px;
     border: none;
     transition: 0.5s;
+    border: 5px solid #ad2e39;
+    cursor: pointer;
 }
 
-.locked {
-    display: none;
+button:hover {
+    background-color: white;
+    color: #FF4655;
 }
