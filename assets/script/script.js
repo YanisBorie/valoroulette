@@ -47,23 +47,27 @@ function filterSelect(filter) {
     switch(filter) {
         case "All":
             agentSelected = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna","Breach","Fade","Kayo","Skye","Sova","Gekko","Brimstone","Viper","Astra","Harbor","Omen","Chamber","Cypher","Killjoy","Sage","Deadlock"];
-            for(let i = 0; i <= agentSelected.length; i++) {
+            for(let i = 0; i < agentSelected.length; i++) {
                 document.getElementById(agentSelected[i]).style.opacity = 1;
             }
             break;
         case "Duelist":
+            filterSelect("All");
             agentSelected = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna"];
             filterUnselect();
             break;
         case "Initiator":
+            filterSelect("All");
             agentSelected = ["Breach","Fade","Kayo","Skye","Sova","Gekko"];
             filterUnselect();
             break;
         case "Controler":
+            filterSelect("All");
             agentSelected = ["Brimstone","Viper","Astra","Harbor","Omen"];
             filterUnselect();
             break;
         case "Sentinel":
+            filterSelect("All");
             agentSelected = ["Chamber","Cypher","Killjoy","Sage","Deadlock"];
             filterUnselect();
             break;
@@ -72,11 +76,11 @@ function filterSelect(filter) {
 
 function filterUnselect() {
     agentUnselected = allAgent;
-    for(let i = 0; i <= agentSelected.length; i++) {
+    for(let i = 0; i < agentSelected.length; i++) {
         agentUnselected = agentUnselected.filter((agentUnselected) => agentUnselected !== agentSelected[i]);
     }
 
-    for(let i = 0; i <= agentUnselected.length; i++) {
+    for(let i = 0; i < agentUnselected.length; i++) {
         document.getElementById(agentUnselected[i]).style.opacity = 0.25;
     }
 }
