@@ -21,7 +21,7 @@ function roulette() {
         document.getElementById("backButton").style.display = "block";
     } else {
         let yourAgent = agentSelected[Math.floor(Math.random() * agentSelected.length)];
-        document.getElementById("agentSelect").setAttribute("src", "./assets/images/" + yourAgent.toLowerCase() + "_icon.png");
+        document.getElementById("agentSelect").setAttribute("src", "./assets/images/" + yourAgent.toLowerCase() + "_icon.webp");
         document.getElementById("agentName").innerHTML = yourAgent;
     }
     
