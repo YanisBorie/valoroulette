@@ -1,9 +1,36 @@
 var allAgent = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna","Breach","Fade","Kayo","Skye","Sova","Gekko","Brimstone","Viper","Astra","Harbor","Omen","Chamber","Cypher","Killjoy","Sage","Deadlock"];
 var agentUnselected = [];
 var agentSelected = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna","Breach","Fade","Kayo","Skye","Sova","Gekko","Brimstone","Viper","Astra","Harbor","Omen","Chamber","Cypher","Killjoy","Sage","Deadlock"];
+var myInterval;
+var counter = 25;
 
 function random() {
-    alert("Vous jouez " + agentSelected[Math.floor(Math.random() * agentSelected.length)]);
+    counter = 25;
+    document.getElementById('popupbackground').style.animation = '0.5s fondu both';
+    document.getElementById("popupbackground").style.display = "flex";
+    document.getElementById("popup").style.display = "flex";
+    myInterval = setInterval(roulette, 150);
+}
+
+function roulette() {
+    counter--;
+    
+    if(counter == 0) {
+        clearInterval(myInterval);
+        document.getElementById("backButton").style.animation = '1s fondu both';
+        document.getElementById("backButton").style.display = "block";
+    } else {
+        let yourAgent = agentSelected[Math.floor(Math.random() * agentSelected.length)];
+        document.getElementById("agentSelect").setAttribute("src", "./assets/images/" + yourAgent.toLowerCase() + "_icon.png");
+        document.getElementById("agentName").innerHTML = yourAgent;
+    }
+    
+}
+
+function unpopup() {
+    document.getElementById("popupbackground").style.display = "none";
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("backButton").style.display = "none";
 }
 
 function select(agent) {
