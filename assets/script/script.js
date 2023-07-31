@@ -9,6 +9,8 @@ function random() {
     document.getElementById('popupbackground').style.animation = '0.5s fondu both';
     document.getElementById("popupbackground").style.display = "flex";
     document.getElementById("popup").style.display = "flex";
+    let audio = new Audio("./assets/images/valorant-ranked.mp3");
+    audio.play();
     myInterval = setInterval(roulette, 150);
 }
 
@@ -17,6 +19,8 @@ function roulette() {
     
     if(counter == 0) {
         clearInterval(myInterval);
+        let audio = new Audio("./assets/images/valorant-ace.mp3");
+        audio.play();
         document.getElementById("backButton").style.animation = '1s fondu both';
         document.getElementById("backButton").style.display = "block";
     } else {
