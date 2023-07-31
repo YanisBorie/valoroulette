@@ -12,6 +12,7 @@
     <main>
         <aside>
             <button onclick="filterSelect('All')">Tous</button>
+            <button onclick="filterSelect('None')">Aucun</button>
             <button onclick="filterSelect('Duelist')">Duelliste</button>
             <button onclick="filterSelect('Sentinel')">Sentinelle</button>
             <button onclick="filterSelect('Initiator')">Initiateur</button>
@@ -95,6 +96,10 @@
             <img id="agentSelect" src="">
             <h2 id="agentName">Agent</h2>
             <h3 id="backButton" onclick="unpopup()">Retour</h3>
+        </div>
+        <div id="popupError" class="popup">
+            <h2 id="error">Vous devez avoir au minimum 2 agents de sélectionnés !</h2>
+            <h3 id="backButtonError" onclick="unpopup()">Retour</h3>
         </div>
     </section>
     <script src="./assets/script/script.js"></script>

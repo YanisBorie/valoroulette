@@ -5,13 +5,21 @@ var myInterval;
 var counter = 25;
 
 function random() {
-    counter = 25;
-    document.getElementById('popupbackground').style.animation = '0.5s fondu both';
-    document.getElementById("popupbackground").style.display = "flex";
-    document.getElementById("popup").style.display = "flex";
-    let audio = new Audio("./assets/images/valorant-ranked.mp3");
-    audio.play();
-    myInterval = setInterval(roulette, 150);
+    if(agentSelected.length < 2) {
+        counter = 0;
+        document.getElementById('popupbackground').style.animation = '0.5s fondu both';
+        document.getElementById("popupbackground").style.display = "flex";
+        document.getElementById("popupError").style.display = "flex";
+        document.getElementById("backButtonError").style.display = "block";
+    } else {
+        counter = 25;
+        document.getElementById('popupbackground').style.animation = '0.5s fondu both';
+        document.getElementById("popupbackground").style.display = "flex";
+        document.getElementById("popup").style.display = "flex";
+        let audio = new Audio("./assets/images/valorant-ranked.mp3");
+        audio.play();
+        myInterval = setInterval(roulette, 150);
+    }
 }
 
 function roulette() {
@@ -35,6 +43,8 @@ function unpopup() {
     document.getElementById("popupbackground").style.display = "none";
     document.getElementById("popup").style.display = "none";
     document.getElementById("backButton").style.display = "none";
+    document.getElementById("popupError").style.display = "none";
+    document.getElementById("backButtonError").style.display = "none";
 }
 
 function select(agent) {
@@ -53,6 +63,12 @@ function filterSelect(filter) {
             agentSelected = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna","Breach","Fade","Kayo","Skye","Sova","Gekko","Brimstone","Viper","Astra","Harbor","Omen","Chamber","Cypher","Killjoy","Sage","Deadlock"];
             for(let i = 0; i < agentSelected.length; i++) {
                 document.getElementById(agentSelected[i]).style.opacity = 1;
+            }
+            break;
+        case "None":
+            for(let i = 0; i < allAgent.length; i++) {
+                agentSelected = [];
+                document.getElementById(allAgent[i]).style.opacity = 0.25;
             }
             break;
         case "Duelist":
