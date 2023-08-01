@@ -1,6 +1,7 @@
 var allAgent = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna","Breach","Fade","Kayo","Skye","Sova","Gekko","Brimstone","Viper","Astra","Harbor","Omen","Chamber","Cypher","Killjoy","Sage","Deadlock"];
 var agentUnselected = [];
-var agentSelected = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna","Breach","Fade","Kayo","Skye","Sova","Gekko","Brimstone","Viper","Astra","Harbor","Omen","Chamber","Cypher","Killjoy","Sage","Deadlock"];
+var randomAgent = allAgent;
+var agentSelected = allAgent;
 var myInterval;
 var counter = 25;
 
@@ -59,17 +60,26 @@ function select(agent) {
 
 function filterSelect(filter) {
     switch(filter) {
-        case "All":
-            agentSelected = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna","Breach","Fade","Kayo","Skye","Sova","Gekko","Brimstone","Viper","Astra","Harbor","Omen","Chamber","Cypher","Killjoy","Sage","Deadlock"];
-            for(let i = 0; i < agentSelected.length; i++) {
-                document.getElementById(agentSelected[i]).style.opacity = 1;
+        case "All/None":
+            if(agentSelected.length == 0) {
+                filterAllSelect();
+            } else {
+                agentSelected = [];
+                for(let i = 0; i < allAgent.length; i++) {
+                    document.getElementById(allAgent[i]).style.opacity = 0.25;
+                }
             }
             break;
-        case "None":
-            for(let i = 0; i < allAgent.length; i++) {
-                agentSelected = [];
-                document.getElementById(allAgent[i]).style.opacity = 0.25;
+        case "Random":
+            filterAllSelect();
+            randomAgent = allAgent;
+            agentSelected = [];
+            for(let i = 0; i < 7; i++) {
+                let agent = randomAgent[Math.floor(Math.random() * randomAgent.length)];
+                agentSelected.push(agent);
+                randomAgent = randomAgent.filter((randomAgent) => randomAgent !== agent);
             }
+            filterUnselect();
             break;
         case "Duelist":
             filterSelect("All");
@@ -102,5 +112,12 @@ function filterUnselect() {
 
     for(let i = 0; i < agentUnselected.length; i++) {
         document.getElementById(agentUnselected[i]).style.opacity = 0.25;
+    }
+}
+
+function filterAllSelect() {
+    agentSelected = allAgent;
+    for(let i = 0; i < agentSelected.length; i++) {
+        document.getElementById(agentSelected[i]).style.opacity = 1;
     }
 }
