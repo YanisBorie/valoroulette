@@ -163,9 +163,13 @@ button:hover {
         width: 85vw;
     }
 
+    section div div {
+        padding: 5px;
+    }
+
     div img {
-        height: 32px;
-        width: 32px;
+        height: 48px;
+        width: 48px;
     }
 
     button {
