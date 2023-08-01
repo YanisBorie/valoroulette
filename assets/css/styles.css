@@ -79,6 +79,7 @@ button {
     transition: 0.5s;
     border: 5px solid #ad2e39;
     cursor: pointer;
+    vertical-align: middle;
 }
 
 button:hover {
@@ -143,4 +144,46 @@ button:hover {
 
 #error {
     color: #FF4655;
+}
+
+@media screen and (max-width: 767px) {
+    main {
+        flex-direction: column;
+    }
+
+    aside {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 85vw;
+        margin: auto;
+    }
+
+    section {
+        margin: auto;
+        width: 85vw;
+    }
+
+    div img {
+        height: 32px;
+        width: 32px;
+    }
+
+    button {
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .popup {
+        height: 40vh;
+        width: 60vw;
+    }
+
+    .popup img {
+        height: 96px;
+        width: 96px;
+    }
 }

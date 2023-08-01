@@ -82,22 +82,22 @@ function filterSelect(filter) {
             filterUnselect();
             break;
         case "Duelist":
-            filterSelect("All");
+            filterAllSelect();
             agentSelected = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna"];
             filterUnselect();
             break;
         case "Initiator":
-            filterSelect("All");
+            filterAllSelect();
             agentSelected = ["Breach","Fade","Kayo","Skye","Sova","Gekko"];
             filterUnselect();
             break;
         case "Controler":
-            filterSelect("All");
+            filterAllSelect();
             agentSelected = ["Brimstone","Viper","Astra","Harbor","Omen"];
             filterUnselect();
             break;
         case "Sentinel":
-            filterSelect("All");
+            filterAllSelect();
             agentSelected = ["Chamber","Cypher","Killjoy","Sage","Deadlock"];
             filterUnselect();
             break;
