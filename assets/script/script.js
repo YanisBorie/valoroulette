@@ -1,9 +1,21 @@
-var allAgent = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna","Breach","Fade","Kayo","Skye","Sova","Gekko","Brimstone","Viper","Astra","Harbor","Omen","Chamber","Cypher","Killjoy","Sage","Deadlock"];
+var allAgent = ["Astra","Breach","Brimstone","Chamber","Cypher","Deadlock","Fade","Gekko","Harbor", "Jett","Kayo","Killjoy","Neon","Omen","Phoenix","Raze","Reyna","Sage","Skye","Sova","Viper","Yoru"];
 var agentUnselected = [];
 var randomAgent = allAgent;
 var agentSelected = allAgent;
 var myInterval;
 var counter = 25;
+
+function init() {
+    for(let i = 0; i < allAgent.length; i++) {
+        let agentGrid = document.createElement('div');
+        agentGrid.setAttribute('id', allAgent[i]);
+        agentGrid.setAttribute('onclick', "select('" + allAgent[i] + "')");
+        document.getElementById("agentGrid").appendChild(agentGrid);
+        let agentPicture = document.createElement('img');
+        agentPicture.setAttribute("src", "./assets/images/" + allAgent[i].toLowerCase() + "_icon.webp");
+        document.getElementById(allAgent[i]).appendChild(agentPicture);
+    }
+}
 
 function random() {
     if(agentSelected.length < 2) {
