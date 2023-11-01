@@ -1,4 +1,4 @@
-var allAgent = ["Astra","Breach","Brimstone","Chamber","Cypher","Deadlock","Fade","Gekko","Harbor", "Jett","Kayo","Killjoy","Neon","Omen","Phoenix","Raze","Reyna","Sage","Skye","Sova","Viper","Yoru"];
+var allAgent = ["Astra","Breach","Brimstone","Chamber","Cypher","Deadlock","Fade","Gekko","Harbor","Iso","Jett","Kayo","Killjoy","Neon","Omen","Phoenix","Raze","Reyna","Sage","Skye","Sova","Viper","Yoru"];
 var agentUnselected = [];
 var randomAgent = allAgent;
 var agentSelected = allAgent;
@@ -95,7 +95,7 @@ function filterSelect(filter) {
             break;
         case "Duelist":
             filterAllSelect();
-            agentSelected = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna"];
+            agentSelected = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna","Iso"];
             filterUnselect();
             break;
         case "Initiator":
