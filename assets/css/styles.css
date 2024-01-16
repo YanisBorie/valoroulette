@@ -18,13 +18,23 @@ h1 {
     color: white;
     text-align: center;
     margin-top: 8vh;
+    text-shadow:
+        5px 5px 0 #000,
+        0px 0px 0 #000,
+        0px 0px 0 #000,
+        0px 0px 0 #000;
 }
 
-h1, button {
+h1,
+button {
     font-family: "VALORANT";
 }
 
-h2, h3, h4, h5, p {
+h2,
+h3,
+h4,
+h5,
+p {
     font-family: "Glacial Indifference";
 }
 
@@ -110,7 +120,9 @@ button:hover {
     display: none;
     flex-direction: column;
     justify-content: center;
-    background-color: rgba(182, 182, 182, 0.85);
+    position: relative;
+    background-color: rgba(182, 182, 182);
+    border: 3px solid #CCCCCC;
     z-index: 1;
     height: 20vw;
     width: 20vw;
@@ -123,26 +135,54 @@ button:hover {
 .popup img {
     height: 144px;
     width: 144px;
-    border: 2px solid rgba(182, 182, 182, 0.85);
+    border: 2px solid #CCCCCC;
 }
 
-.popup h2, h3 {
+.popup h2,
+h3 {
     margin: 10px;
 }
 
-#backButton, #backButtonError {
+#backButton,
+#backButtonError {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(182, 182, 182);
+    border: 3px solid #CCCCCC;
+    border-radius: 100%;
+    top: -14px;
+    right: -14px;
     cursor: pointer;
+    transition: 0.5s;
 }
 
-#backButton:hover, #backButtonError:hover {
-    text-decoration: underline;
+#backButton:hover,
+#backButtonError:hover {
+    background-color: #CCCCCC;
+    border: 3px solid rgba(182, 182, 182);
+}
+
+#backButton img {
+    height: 20px;
+    width: 20px;
+    border: none;
+    border-radius: 0;
+}
+
+#backButtonError img {
+    height: 20px;
+    width: 20px;
+    border: none;
+    border-radius: 0;
 }
 
 @keyframes fondu {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }

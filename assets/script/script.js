@@ -1,4 +1,4 @@
-var allAgent = ["Astra","Breach","Brimstone","Chamber","Cypher","Deadlock","Fade","Gekko","Harbor","Iso","Jett","Kayo","Killjoy","Neon","Omen","Phoenix","Raze","Reyna","Sage","Skye","Sova","Viper","Yoru"];
+var allAgent = ["Astra", "Breach", "Brimstone", "Chamber", "Cypher", "Deadlock", "Fade", "Gekko", "Harbor", "Iso", "Jett", "Kayo", "Killjoy", "Neon", "Omen", "Phoenix", "Raze", "Reyna", "Sage", "Skye", "Sova", "Viper", "Yoru"];
 var agentUnselected = [];
 var randomAgent = allAgent;
 var agentSelected = allAgent;
@@ -6,7 +6,7 @@ var myInterval;
 var counter = 25;
 
 function init() {
-    for(let i = 0; i < allAgent.length; i++) {
+    for (let i = 0; i < allAgent.length; i++) {
         let agentGrid = document.createElement('div');
         agentGrid.setAttribute('id', allAgent[i]);
         agentGrid.setAttribute('onclick', "select('" + allAgent[i] + "')");
@@ -18,12 +18,12 @@ function init() {
 }
 
 function random() {
-    if(agentSelected.length < 2) {
+    if (agentSelected.length < 2) {
         counter = 0;
         document.getElementById('popupbackground').style.animation = '0.5s fondu both';
         document.getElementById("popupbackground").style.display = "flex";
         document.getElementById("popupError").style.display = "flex";
-        document.getElementById("backButtonError").style.display = "block";
+        document.getElementById("backButtonError").style.display = "flex";
     } else {
         counter = 25;
         document.getElementById('popupbackground').style.animation = '0.5s fondu both';
@@ -37,19 +37,19 @@ function random() {
 
 function roulette() {
     counter--;
-    
-    if(counter == 0) {
+
+    if (counter == 0) {
         clearInterval(myInterval);
         let audio = new Audio("./assets/images/valorant-ace.mp3");
         audio.play();
         document.getElementById("backButton").style.animation = '1s fondu both';
-        document.getElementById("backButton").style.display = "block";
+        document.getElementById("backButton").style.display = "flex";
     } else {
         let yourAgent = agentSelected[Math.floor(Math.random() * agentSelected.length)];
         document.getElementById("agentSelect").setAttribute("src", "./assets/images/" + yourAgent.toLowerCase() + "_icon.webp");
         document.getElementById("agentName").innerHTML = yourAgent;
     }
-    
+
 }
 
 function unpopup() {
@@ -71,13 +71,13 @@ function select(agent) {
 }
 
 function filterSelect(filter) {
-    switch(filter) {
+    switch (filter) {
         case "All/None":
-            if(agentSelected.length == 0) {
+            if (agentSelected.length == 0) {
                 filterAllSelect();
             } else {
                 agentSelected = [];
-                for(let i = 0; i < allAgent.length; i++) {
+                for (let i = 0; i < allAgent.length; i++) {
                     document.getElementById(allAgent[i]).style.opacity = 0.25;
                 }
             }
@@ -86,7 +86,7 @@ function filterSelect(filter) {
             filterAllSelect();
             randomAgent = allAgent;
             agentSelected = [];
-            for(let i = 0; i < 7; i++) {
+            for (let i = 0; i < 7; i++) {
                 let agent = randomAgent[Math.floor(Math.random() * randomAgent.length)];
                 agentSelected.push(agent);
                 randomAgent = randomAgent.filter((randomAgent) => randomAgent !== agent);
@@ -95,22 +95,22 @@ function filterSelect(filter) {
             break;
         case "Duelist":
             filterAllSelect();
-            agentSelected = ["Jett","Phoenix","Yoru","Raze","Neon","Reyna","Iso"];
+            agentSelected = ["Jett", "Phoenix", "Yoru", "Raze", "Neon", "Reyna", "Iso"];
             filterUnselect();
             break;
         case "Initiator":
             filterAllSelect();
-            agentSelected = ["Breach","Fade","Kayo","Skye","Sova","Gekko"];
+            agentSelected = ["Breach", "Fade", "Kayo", "Skye", "Sova", "Gekko"];
             filterUnselect();
             break;
         case "Controler":
             filterAllSelect();
-            agentSelected = ["Brimstone","Viper","Astra","Harbor","Omen"];
+            agentSelected = ["Brimstone", "Viper", "Astra", "Harbor", "Omen"];
             filterUnselect();
             break;
         case "Sentinel":
             filterAllSelect();
-            agentSelected = ["Chamber","Cypher","Killjoy","Sage","Deadlock"];
+            agentSelected = ["Chamber", "Cypher", "Killjoy", "Sage", "Deadlock"];
             filterUnselect();
             break;
     }
@@ -118,18 +118,18 @@ function filterSelect(filter) {
 
 function filterUnselect() {
     agentUnselected = allAgent;
-    for(let i = 0; i < agentSelected.length; i++) {
+    for (let i = 0; i < agentSelected.length; i++) {
         agentUnselected = agentUnselected.filter((agentUnselected) => agentUnselected !== agentSelected[i]);
     }
 
-    for(let i = 0; i < agentUnselected.length; i++) {
+    for (let i = 0; i < agentUnselected.length; i++) {
         document.getElementById(agentUnselected[i]).style.opacity = 0.25;
     }
 }
 
 function filterAllSelect() {
     agentSelected = allAgent;
-    for(let i = 0; i < agentSelected.length; i++) {
+    for (let i = 0; i < agentSelected.length; i++) {
         document.getElementById(agentSelected[i]).style.opacity = 1;
     }
 }

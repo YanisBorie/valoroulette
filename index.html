@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="./assets/images/valorant_logo.webp"/>
-    <link rel="stylesheet" href="./assets/css/styles.css"/>
+    <link rel="shortcut icon" type="image/png" href="./assets/images/valorant_logo.webp" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>VALOROULETTE</title>
 </head>
+
 <body onload="init()">
     <h1>VALOROULETTE</h1>
     <main>
         <aside>
             <button onclick="filterSelect('All/None')">Tous / Aucun</button>
             <button onclick="filterSelect('Random')">Aleatoire</button>
-            <button onclick="filterSelect('Duelist')">Duelliste</button>
+            <button onclick="filterSelect('Duelist')">Dueliste</button>
             <button onclick="filterSelect('Sentinel')">Sentinelle</button>
             <button onclick="filterSelect('Initiator')">Initiateur</button>
             <button onclick="filterSelect('Controler')">Controleur</button>
@@ -29,13 +31,18 @@
             <h2>Vous jouez</h2>
             <img id="agentSelect" src="">
             <h2 id="agentName">Agent</h2>
-            <h3 id="backButton" onclick="unpopup()">Retour</h3>
+            <div id="backButton" onclick="unpopup()">
+                <img src="./assets/images/croix.png">
+            </div>
         </div>
         <div id="popupError" class="popup">
             <h2 id="error">Vous devez avoir au minimum 2 agents de sélectionnés !</h2>
-            <h3 id="backButtonError" onclick="unpopup()">Retour</h3>
+            <div id="backButtonError" onclick="unpopup()">
+                <img src="./assets/images/croix.png">
+            </div>
         </div>
     </section>
     <script src="./assets/script/script.js"></script>
 </body>
+
 </html>
