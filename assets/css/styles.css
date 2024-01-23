@@ -11,13 +11,14 @@ body {
     background-image: url("https://pbs.twimg.com/media/EU2bM4XWkAEeFQI?format=jpg&name=large");
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 h1 {
     font-size: 52px;
     color: white;
     text-align: center;
-    margin-top: 8vh;
+    margin-top: 5vh;
     text-shadow:
         5px 5px 0 #000,
         0px 0px 0 #000,
@@ -47,7 +48,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 60vw;
+    width: 65vw;
 }
 
 section div {
@@ -77,8 +78,8 @@ aside {
 }
 
 div img {
-    height: 80px;
-    width: 80px;
+    height: 5vw;
+    width: 5vw;
     margin-left: auto;
     margin-right: auto;
     border-radius: 2em;
@@ -87,13 +88,14 @@ div img {
 button {
     background-color: #FF4655;
     color: white;
-    font-size: 20px;
-    margin: 10px;
+    font-size: 1.15em;
+    margin: 6px;
     padding: 25px;
     border-radius: 2px;
     border: none;
     transition: 0.5s;
     border: 5px solid #ad2e39;
+    border-radius: 1vw;
     cursor: pointer;
     vertical-align: middle;
 }
@@ -141,6 +143,13 @@ button:hover {
 .popup h2,
 h3 {
     margin: 10px;
+}
+
+.credit {
+    position: absolute;
+    color: white;
+    bottom: -45px;
+    left: auto;
 }
 
 #backButton,
@@ -214,12 +223,11 @@ h3 {
     }
 
     div img {
-        height: 48px;
-        width: 48px;
+        height: 5.5vh;
+        width: 5.5vh;
     }
 
     button {
-        font-size: 16px;
         margin: 5px;
     }
 
