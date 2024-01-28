@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="./assets/images/valorant_logo.webp" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
-    <title>VALOROULETTE</title>
+    <title>Valoroulette</title>
 </head>
 
 <body onload="init()">
-    <h1>VALOROULETTE</h1>
+    <header>
+        <h1>VALOROULETTE</h1>
+        <button class="credit" onclick="credit()">Crédits</button>
+    </header>
     <main>
         <aside>
             <button onclick="filterSelect('All/None')">Tous / Aucun</button>
@@ -41,8 +44,16 @@
                 <img src="./assets/images/croix.png">
             </div>
         </div>
+        <div id="popupCredit" class="popup">
+            <img src="./assets/images/Moi.png">
+            <h2 id="agentName">Yanis Borie</h2>
+            <h3>Développeur</h3>
+            <p>Sur une idée originale inspiré de <a href="https://schoch.co.nz/valorant" target="_blank">James Schoch</a> !</p>
+            <div id="backButtonCredit" onclick="unpopup()">
+                <img src="./assets/images/croix.png">
+            </div>
+        </div>
     </section>
-    <p class="credit">Crédits ❤️</p>
     <script src="./assets/script/script.js"></script>
 </body>
 

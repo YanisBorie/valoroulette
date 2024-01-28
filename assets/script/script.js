@@ -58,6 +58,8 @@ function unpopup() {
     document.getElementById("backButton").style.display = "none";
     document.getElementById("popupError").style.display = "none";
     document.getElementById("backButtonError").style.display = "none";
+    document.getElementById("popupCredit").style.display = "none";
+    document.getElementById("backButtonCredit").style.display = "none";
 }
 
 function select(agent) {
@@ -132,4 +134,11 @@ function filterAllSelect() {
     for (let i = 0; i < agentSelected.length; i++) {
         document.getElementById(agentSelected[i]).style.opacity = 1;
     }
+}
+
+function credit() {
+    document.getElementById('popupbackground').style.animation = '0.5s fondu both';
+    document.getElementById("popupbackground").style.display = "flex";
+    document.getElementById("popupCredit").style.display = "flex";
+    document.getElementById("backButtonCredit").style.display = "flex";
 }

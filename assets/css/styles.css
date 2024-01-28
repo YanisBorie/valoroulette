@@ -11,7 +11,6 @@ body {
     background-image: url("https://pbs.twimg.com/media/EU2bM4XWkAEeFQI?format=jpg&name=large");
     background-size: cover;
     background-repeat: no-repeat;
-    position: relative;
 }
 
 h1 {
@@ -19,6 +18,7 @@ h1 {
     color: white;
     text-align: center;
     margin-top: 5vh;
+    margin-bottom: 3vh;
     text-shadow:
         5px 5px 0 #000,
         0px 0px 0 #000,
@@ -37,6 +37,16 @@ h4,
 h5,
 p {
     font-family: "Glacial Indifference";
+}
+
+a {
+    color: #FF4655;
+    font-weight: bold;
+    transition: 1s;
+}
+
+a:hover {
+    color: #ad2e39;
 }
 
 main {
@@ -145,15 +155,26 @@ h3 {
     margin: 10px;
 }
 
+#popupCredit h2 {
+    margin-bottom: -3%;
+}
+
+header {
+    position: relative;
+}
+
 .credit {
     position: absolute;
+    padding: 10px;
+    border-radius: 100%;
     color: white;
-    bottom: -45px;
-    left: auto;
+    top: -50%;
+    right: 1%;
 }
 
 #backButton,
-#backButtonError {
+#backButtonError,
+#backButtonCredit {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -168,7 +189,8 @@ h3 {
 }
 
 #backButton:hover,
-#backButtonError:hover {
+#backButtonError:hover,
+#backButtonCredit:hover {
     background-color: #CCCCCC;
     border: 3px solid rgba(182, 182, 182);
 }
@@ -181,6 +203,13 @@ h3 {
 }
 
 #backButtonError img {
+    height: 20px;
+    width: 20px;
+    border: none;
+    border-radius: 0;
+}
+
+#backButtonCredit img {
     height: 20px;
     width: 20px;
     border: none;
