@@ -1,4 +1,4 @@
-var allAgent = ["Astra", "Breach", "Brimstone", "Chamber", "Clove","Cypher", "Deadlock", "Fade", "Gekko", "Harbor", "Iso", "Jett", "Kayo", "Killjoy", "Neon", "Omen", "Phoenix", "Raze", "Reyna", "Sage", "Skye", "Sova", "Viper", "Yoru"];
+var allAgent = ["Astra", "Breach", "Brimstone", "Chamber", "Clove","Cypher", "Deadlock", "Fade", "Gekko", "Harbor", "Iso", "Jett", "Kayo", "Killjoy", "Neon", "Omen", "Phoenix", "Raze", "Reyna", "Sage", "Skye", "Sova", "Viper", "Vyse", "Yoru"];
 var agentUnselected = [];
 var randomAgent = allAgent;
 var agentSelected = allAgent;
@@ -112,7 +112,7 @@ function filterSelect(filter) {
             break;
         case "Sentinel":
             filterAllSelect();
-            agentSelected = ["Chamber", "Cypher", "Killjoy", "Sage", "Deadlock"];
+            agentSelected = ["Chamber", "Cypher", "Killjoy", "Sage", "Deadlock", "Vyse"];
             filterUnselect();
             break;
     }
